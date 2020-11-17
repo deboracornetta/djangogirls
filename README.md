@@ -1,3 +1,3 @@
 # Equipe djanGirls
 
-Projeto final Django Magazine Luiza 
+Projeto final Magalu  desenvolvido em Python/Django. 
