@@ -26,4 +26,5 @@ Criar/Restabelecer Migrations
 Páginas com conteúdo:
 
  -> http://localhost:8000/
+ -> http://localhost:8000/sellers
  -> http://localhost:8000/sellers/register
