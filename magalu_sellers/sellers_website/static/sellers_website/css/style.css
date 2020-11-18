@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.header {
+    height: 50px;
+    background-color: #0D83C9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__logo {
+    display: block;
+    
+}
+.header__svg {
+    display: block;
+    height: 20px;
+}
+.page__title {
+    text-align: center;
+    padding: 1rem;
+}
