@@ -91,6 +91,15 @@ ACCESS SECTION
     background-color: #F19702;
 }
 
+/* 
+    SELLER MODIFIERS
+*/
+.access--seller .button {
+    margin-bottom: 2rem;
+}
+.main--seller .page__title {
+    font-size: 1.2rem;
+}
 
 
 /* 
