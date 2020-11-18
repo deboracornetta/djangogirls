@@ -3,11 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-body {
+body, button {
     font-family: 'Montserrat', sans-serif;
 }
 .header {
-    height: 50px;
+    height: 80px;
     background-color: #0D83C9;
     display: flex;
     align-items: center;
@@ -17,11 +17,105 @@ body {
     display: block;
     
 }
-.header__svg {
+.header__image {
     display: block;
-    height: 20px;
+    height: 30px;
 }
 .page__title {
     text-align: center;
     padding: 1rem;
+}
+.button {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: white;
+    border-radius: 50px;
+    padding: 1.5rem 2rem;
+    display: block;
+    margin: 1rem auto;
+    transition: all .3s ease-in;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}
+.button:hover {
+    background-color: #D836A3;
+    color: white;
+    transform: scale(1.1);
+}
+/* 
+ HOME PAGE STYLES
+*/
+.main__home {
+    max-height: 100vh;
+    min-height: 100vh;
+    background-color: #0D83C9;
+    background-image: url('/static/sellers_website/images/capa.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    position: relative;
+}
+.main__home .page__title {
+    font-size: 1.8rem;
+    color: white;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* 
+ACCESS SECTION
+*/
+.access {
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    max-width: 480px;
+    width: 80%;
+
+}
+.access-home {
+    padding-bottom: 2rem;
+}
+.access-admin {
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    width: initial;
+}
+.access-admin__button {
+    padding: 1rem 1rem;
+}
+.access-admin__button:hover {
+    background-color: #F19702;
+}
+
+
+
+/* 
+MEDIA QUERIES
+*/
+
+@media screen and (min-width: 720px) {
+    .main__home .page__title {
+        padding-top: 3rem;
+        font-size: 2rem;
+    }  
+    .header {
+        height: 140px;
+    }
+    .header__image {
+        height: 70px;
+    }
+    .main__home {
+        min-height: calc(100vh - 140px);
+        /* height: 100vh; */
+    }
+    .access {
+        padding-top: 4.5rem;
+    }
+    .access-admin {
+        right: 2rem;
+    }
 }
