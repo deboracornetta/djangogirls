@@ -8,7 +8,7 @@ class Vendedor(models.Model):
     email = models.EmailField()
     telefone = models.CharField(max_length=11)
     endereco = models.CharField(max_length=200)
-    senha = models.CharField(max_length=12)
+    senha = models.CharField(max_length=12, default='0000000')
     
     def __str__(self):
         return self.nome
