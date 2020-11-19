@@ -1,4 +1,4 @@
-# Equipe djanGirls
+# Equipe DjanGirls
 
 ## Projeto final Magalu  
 #### Desenvolvido em Python/Django. 
