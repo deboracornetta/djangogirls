@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
+from django.views.generic.base import View
 # from .forms import List_Form
 # from .models import Shopping_List
 
@@ -16,6 +17,17 @@ def index(request):
 
 def sellers_register(request):
     return render(request, 'sellers_website/sellers_register.html')
+
+# class RegisterUserView(View):
+
+#     template_name = 'sellers_website/sellers_register.html'
+
+#     def get(self, request):
+#         return render (request, self.template_name)
+    
+#     def post(self, request):
+#         return render(request, self.template_name)
+
 
 # @require_POST
 # def add_new_item(request):
