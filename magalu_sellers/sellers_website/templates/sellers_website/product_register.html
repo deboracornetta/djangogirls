@@ -1,0 +1,48 @@
+{% extends "sellers_website/base.html" %}
+    {% block content %}
+    <main>
+        <h1 class="page__title">Quero cadastrar um Produto</h1>
+        <form class="form-signin" role="form" action="" method="post">
+            <ul class="form__list">
+                <li>
+                    <label for="id_title">Nome do Produto *</label>
+                     <input id="id_title" name="product_form" type="text" class="form-control" placeholder="ex.:Aspirador de Pó" required>
+                </li>
+                <li>
+                    <label for="id_brand">Marca *</label>
+                     <input id="id_brand" name="product_form" type="text" class="form-control" placeholder="ex.:LG" required>
+                </li>
+                <li>
+                    <label for="id_category">Categoria *</label>
+                     <input id="id_category" name="product_form" type="text" class="form-control" placeholder="ex.:Eletrodomestico" required>
+                </li>
+                <li>
+                    <label for="id_price">Preço *</label>
+                     <input id="id_price" name="product_form" type="text" class="form-control" placeholder="ex.:200.00" required>
+                </li>
+                <li>
+                    <label for="id_quantity">Quantidade em Estoque *</label>
+                     <input id="id_quantity" name="product_form" type="text" class="form-control" placeholder="ex.:200" required>
+                </li>
+                <li>
+                    <label for="id_image">Imagem do Produto *</label>
+                     <input id="id_image" name="product_form" type="file" class="form-control">
+                </li>
+               
+            </ul>
+            <div class="button__block">
+                <button class="button button__reset" 
+                    type="reset"> Cancelar
+                </button>
+                <button class="button button__submit" 
+                    type="submit"> Próximo
+                </button>
+            </div>
+
+        </form>
+    </main>
+    <footer class="footer">
+        <p class="footer__help">Em caso de dúvidas, acesse a nossa central de atendimento.</p>
+    </footer>
+        
+    {% endblock content %}

@@ -18,7 +18,7 @@ class Produto(models.Model):
     marca_produto = models.CharField(max_length=100)
     categoria_produto = models.CharField(max_length=100)
     preco_produto = models.FloatField()
-    quantidade_produto = models.FloatField()
+    quantidade_produto = models.IntegerField()
     imagem_produto = models.FileField()
     vendedor = models.ForeignKey(Vendedor, null=True, on_delete=models.SET_NULL)
 
