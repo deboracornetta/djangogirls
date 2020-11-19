@@ -8,6 +8,7 @@ class Vendedor(models.Model):
     email = models.EmailField()
     telefone = models.CharField(max_length=11)
     endereco = models.CharField(max_length=200)
+    senha = models.CharField(max_length=12)
     
     def __str__(self):
         return self.nome
@@ -20,6 +21,7 @@ class Produto(models.Model):
     preco_produto = models.FloatField()
     quantidade_produto = models.IntegerField()
     imagem_produto = models.FileField()
+    ativo_produto = models.BooleanField(default=True)
     vendedor = models.ForeignKey(Vendedor, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
