@@ -24,6 +24,9 @@ def sellers_register(request):
 def product_register(request):
     return render(request, 'sellers_website/product_register.html')
 
+def product_success(request):
+    return render(request, 'sellers_website/product_success.html')
+
 # class RegisterUserView(View):
 
 #     template_name = 'sellers_website/sellers_register.html'
