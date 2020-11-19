@@ -1,7 +1,16 @@
 {% extends "sellers_website/base.html" %}
     {% block content %}
-    <main>
+    <main class="main__home">
         <h1 class="page__title">Seja bem-vindo a plataforma do vendedor</h1>
-
+        <section class="access access-home">
+            <span>É novo por aqui?</h2>
+            <a href="/"  class="button access__button">Faça já o seu cadastro!</a>
+            <span>ou</span>
+            <a href="/"  class="button access__button">Acesse a sua conta</a>
+        </section>
+        <section class="access access-admin">
+            <span>É Magalu?</span>
+            <a href="/" class="button access-admin__button">Acesso Admin</a>
+        </section>
     </main>    
     {% endblock content %}

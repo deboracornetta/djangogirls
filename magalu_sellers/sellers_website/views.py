@@ -15,6 +15,9 @@ def index(request):
     # }
     return render(request, 'sellers_website/index.html')
 
+def sellers_home(request):
+    return render(request, 'sellers_website/sellers_home.html')
+
 def sellers_register(request):
     return render(request, 'sellers_website/sellers_register.html')
 

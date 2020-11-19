@@ -1,17 +1,7 @@
-# Equipe djanGirls
+# Equipe DjanGirls
 
-Projeto final Magalu  desenvolvido em Python/Django. 
-
-
-Para iniciar Virtual Env
-
- Windows:
- 
- -> venv_djangirls_code\Scripts\activate.bat
- 
- Mac:
-
- -> source venv_djangirls_code/bin/activate
+## Projeto final Magalu  
+#### Desenvolvido em Python/Django. 
 
 Rodar o server
 
@@ -26,4 +16,5 @@ Criar/Restabelecer Migrations
 Páginas com conteúdo:
 
  -> http://localhost:8000/
+ -> http://localhost:8000/sellers
  -> http://localhost:8000/sellers/register
