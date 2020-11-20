@@ -1,0 +1,52 @@
+{% extends "sellers_website/base.html" %}
+{% load static %}
+    {% block content %}
+    <main class="main__success">
+        <h1 class="page__title">Mais sobre Djangirls</h1>
+        <section class="access access-about">
+            <h2>Integrantes</h2>
+            <ul class="about__list">
+                <li>
+                    <a href="https://github.com/Ahisanz">
+                        <img src="{% static 'sellers_website/images/ana.jpg' %}" alt="Ana Sanz">
+                    </a>
+                    <p>Ana Sanz</p>
+                </li>
+                <li>
+                    <a href="https://github.com/juliapocciotti">
+                        <img src="{% static 'sellers_website/images/julia_pocciotti.jpeg' %}" alt="Julia Pocciotti">
+                    </a>
+                    <p>Julia Pocciotti</p>
+                </li>
+                <li>
+                    <a href="https://github.com/juliaavaladares">
+                        <img src="{% static 'sellers_website/images/julia_valadares.jpeg' %}" alt="Júlia Valadares">
+                    </a>
+                    <p>Júlia Valadares</p>
+                    </li>
+                <li>
+                    <a href="https://github.com/raquelpaiva">
+                        <img src="{% static 'sellers_website/images/raquel.jpeg' %}" alt="Raquel Paiva">
+                    </a>
+                    <p>Raquel Paiva</p>
+                    </li>
+                <li>
+                    <a href="https://github.com/sigrid-fr">
+                        <img src="{% static 'sellers_website/images/sigrid.jpeg' %}" alt="Sigrid Rodrigues">
+                    </a>
+                    <p>Sigrid Rodrigues</p>
+                    </li>
+            </ul>
+            <h3>Diretrizes</h3>
+            <div class="about__text">
+                <p>O Magazine está com um projeto de expansão, onde deseja <b>conectar vendedores</b> que infelizmente devido a pandemia não conseguem vender seus produtos da forma como antes e oferecer uma <b>diversidade maior de produtos</b> para nossos clientes. Isso traria um impacto enorme para toda a cadeia:</p>
+                <ol>
+                    <li>Os vendedores conseguiriam melhorar seu faturamento a ter a continuidade de seu negócio utilizando nossa plataforma para realizar a venda de seus produtos;</li>
+                    <li>Os clientes ficariam felizes com a diversidade de produtos oferecidos;</li>
+                    <li> O Magazine Luiza melhorará muito seu faturamento conectando vendedores e clientes dos mais diversos nichos</li>
+                </ol>
+            </div>
+        </section>
+    </main>    
+
+    {% endblock content %}

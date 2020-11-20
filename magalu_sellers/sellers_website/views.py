@@ -9,6 +9,9 @@ from .models import Vendedor, Produto
 def index(request):
     return render(request, 'sellers_website/index.html')
 
+def about(request):
+    return render(request, 'sellers_website/about.html')
+
 def sellers_home(request):
     return render(request, 'sellers_website/sellers_home.html')
 
@@ -52,7 +55,7 @@ def product_visualization(request, product_id):
 
 @require_POST
 def add_new_product(request):
-    product_form = Product_Form(request.POST)
+    product_form = Product_Form(request.POST, request.FILES)
 
     if product_form.is_valid():
         
