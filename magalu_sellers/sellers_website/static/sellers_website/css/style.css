@@ -138,6 +138,8 @@ PRODUCT LISTS HOME
     
 }
 .form__list label {
+    color: black;
+    text-align: left;
     display: block;
     margin-bottom: .5rem;
 }
@@ -154,11 +156,12 @@ PRODUCT LISTS HOME
 .form__list .form__checkbox label {
     display: inline;
 }
-.form__list .form__checkbox input {
+.form__list .form__checkbox input, .form__list input[type='checkbox'] {
     display: inline;
     width: 20px;
     height: 20px;
 }
+
 
 .button__block {
     display: flex;

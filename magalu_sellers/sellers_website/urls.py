@@ -13,6 +13,7 @@ urlpatterns = [
     path('sellers/product/<product_id>', views.product_visualization, name="sellers_website-product_visualization"),
     # Funcionalidade dos Cadastros
     path('add_new_product', views.add_new_product, name="add_new_product"),
+    path('update_product/<id>', views.update_product, name="update_product"),
     path('add_new_seller', views.add_new_seller, name="add_new_seller"),
     # path('bought/<item_id>', views.bought_item, name="shopping_list-bought"),
     # path('delete_item/', views.delete_item, name="shopping_list-delete"),

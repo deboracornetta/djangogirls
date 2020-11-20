@@ -31,8 +31,15 @@ class Vendedor_Form(forms.Form):
     senha = forms.CharField(max_length=12)
     class Meta:
         model = Vendedor
+        fields = '__all__'
 
-class Product_Form(forms.Form):
+
+class Product_Update(forms.ModelForm):
+    class Meta:
+        model = Produto
+        fields = ('nome_produto','marca_produto', 'categoria_produto', 'preco_produto', 'quantidade_produto', 'vendedor', 'codigo_produto','ativo_produto')
+
+class Product_Form(forms.ModelForm):
     # text = forms.CharField(max_length=100,
     # widget=forms.TextInput(
     #     attrs={
@@ -59,9 +66,11 @@ class Product_Form(forms.Form):
     )
     preco_produto = forms.FloatField()
     quantidade_produto = forms.IntegerField()
+    codigo_produto = forms.IntegerField()
     # imagem_produto = forms.FileField()
     vendedor = forms.ModelChoiceField(queryset=Vendedor.objects.all())
     
     class Meta:
         model = Produto
+        fields = ('nome_produto','marca_produto', 'categoria_produto', 'preco_produto', 'quantidade_produto', 'vendedor', 'codigo_produto')
 

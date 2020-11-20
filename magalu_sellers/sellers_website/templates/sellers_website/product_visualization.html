@@ -3,19 +3,17 @@
     <main class="main__product">
         <h1 class="page__title">Lista de Produtos</h1>
         <section class="access product">
-            <div class="product__card">
-                <form action="" method="PUT">
-                    
-                </form>
-                <p>{{my_product.nome_produto}}</p>
-                <p>{{my_product.marca_produto}}</p>
-                <p>{{my_product.categoria_produto}}</p>
-                <p>R${{my_product.preco_produto}}</p>
-                <p>{{my_product.preco_produto}} unidades</p>
-                <a href="" class="button button__submit">Editar</a>
-            </div>
+            <form action="{% url 'update_product' id=my_product.id %}" method="POST" class="form-signin form__list">
+                {% csrf_token %}
+                {{ product_form.as_ul }}
+
+                <div class="button__block">
+                    <button class="button button__submit" 
+                            type="submit"> Guardar
+                    </button>
+                </div>
+            </form>
             <a href="/sellers/products" class="button button__submit">Voltar</a>
-              
         </section>
     </main>    
     <footer class="footer">
