@@ -9,6 +9,9 @@ from .models import Vendedor, Produto
 def index(request):
     return render(request, 'sellers_website/index.html')
 
+def about(request):
+    return render(request, 'sellers_website/about.html')
+
 def sellers_home(request):
     return render(request, 'sellers_website/sellers_home.html')
 

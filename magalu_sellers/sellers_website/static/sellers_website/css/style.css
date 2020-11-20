@@ -94,6 +94,36 @@ ACCESS SECTION
 }
 
 /* 
+    ACCESS ABOUT
+*/
+.access-about p, .access-about li{
+    font-size: 1rem;
+    color: black;
+}
+.access-about h2, .access-about h3 {
+    color: black;
+}
+.access-about h3 {
+    margin-bottom: 1rem;
+}
+.access-about li {
+    /* font-weight: bold; */
+    padding: .3rem;
+}
+.about__list {
+    padding: 2rem;
+    list-style: none;
+}
+.about__text ol {
+    padding: 2rem;
+    text-align: left;
+}
+.about__list img {
+    width: 100px;
+    height: auto;
+}
+
+/* 
     SELLER MODIFIERS
 */
 .access--seller .button {
