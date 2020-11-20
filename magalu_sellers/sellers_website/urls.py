@@ -6,6 +6,8 @@ urlpatterns = [
     path('', views.index, name="sellers_website-index"),
     path('sellers/', views.sellers_home, name="sellers_website-sellers_home"),
     path('sellers/register/', views.sellers_register, name="sellers_website-sellers_register"),
+    path('sellers/register/success', views.sellers_sucess, name="sellers_website-register_sucess"),
+
     # Páginas Produtos
     path('sellers/products/', views.sellers_products, name="sellers_website-sellers_products"),
     path('sellers/product/register/', views.product_register, name="sellers_website-product_register"),
