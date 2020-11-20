@@ -19,6 +19,9 @@ def sellers_register(request):
     }
     return render(request, 'sellers_website/sellers_register.html', context)
 
+def sellers_sucess(request):
+    return render(request, 'sellers_website/sellers_sucess.html')
+
 def sellers_products(request):
     my_products = Produto.objects.order_by('id')
     context = {
@@ -100,7 +103,7 @@ def add_new_seller(request):
     else:
         print(seller_form.errors)
 
-    return redirect('add_new_seller')
+    return redirect('sellers_website-register_sucess')
 
 # def bought_item(request, item_id):
 #     my_item = Produto.objects.get(pk=item_id)
