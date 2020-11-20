@@ -24,10 +24,16 @@ def sellers_register(request):
     }
     return render(request, 'sellers_website/sellers_register.html', context)
 
+def sellers_products(request):
+    my_products = Produto.objects.order_by('id')
+    context = {
+        'my_products' : my_products
+    }
+    return render(request, 'sellers_website/sellers_products.html', context)
+
 def product_register(request):
     product_form = Product_Form()
     context = {
-        # 'my_item': my_item,
         'product_form': product_form
     }
     return render(request, 'sellers_website/product_register.html', context)
@@ -36,6 +42,12 @@ def product_success(request):
     return render(request, 'sellers_website/product_success.html')
 
 
+def product_visualization(request, product_id):
+    my_product = Produto.objects.get(pk=product_id)
+    context = {
+        'my_product' : my_product
+    }
+    return render(request, 'sellers_website/product_visualization.html', context)
 # class RegisterUserView(View):
 
 #     template_name = 'sellers_website/sellers_register.html'
@@ -85,7 +97,7 @@ def add_new_product(request):
     else:
         print(product_form.errors)
 
-    return redirect('add_new_product')
+    return redirect('sellers_website-product_register_success')
 
 
 @require_POST

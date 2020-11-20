@@ -1,0 +1,15 @@
+{% extends "sellers_website/base.html" %}
+    {% block content %}
+    <main class="main__products">
+        <h1 class="page__title">Lista de Produtos</h1>
+        <section class="access ">
+                <li class="product-card">
+                    <p>{{my_product.nome_produto}}</p>
+                    <a href="" class="button button__submit">Ver Produto</a>
+                </li>
+        </section>
+    </main>    
+    <footer class="footer">
+        <p class="footer__help">Em caso de dúvidas, acesse a nossa central de atendimento.</p>
+    </footer>
+    {% endblock content %}
