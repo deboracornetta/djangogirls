@@ -76,7 +76,7 @@ def add_new_product(request):
 
 @require_POST
 def add_new_seller(request):
-    seller_form = Vendedor_Form(request.POST)
+    seller_form = Vendedor_Form(request.POST,None)
 
 
     if seller_form.is_valid():
