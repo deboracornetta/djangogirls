@@ -171,6 +171,10 @@ PRODUCT LISTS HOME
 .button__reset {
     padding: 1rem;
 }
+.button__reset:hover {
+    background-color: #474747;
+}
+
 .button__submit {
     background-color: #F5CE08;
     padding: 1rem;
