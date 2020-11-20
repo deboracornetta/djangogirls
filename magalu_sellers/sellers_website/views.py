@@ -17,7 +17,12 @@ def sellers_home(request):
     return render(request, 'sellers_website/sellers_home.html')
 
 def sellers_register(request):
-    return render(request, 'sellers_website/sellers_register.html')
+    seller_form = Vendedor_Form()
+    context = {
+        # 'my_item': my_item,
+        'seller_form': seller_form
+    }
+    return render(request, 'sellers_website/sellers_register.html', context)
 
 def product_register(request):
     product_form = Product_Form()
@@ -82,6 +87,35 @@ def add_new_product(request):
 
     return redirect('add_new_product')
 
+
+@require_POST
+def add_new_seller(request):
+    seller_form = Vendedor_Form(request.POST)
+
+
+    if seller_form.is_valid():
+        # print(product_form.cleaned_data['quantidade_produto'])
+        nome = seller_form.cleaned_data['nome']
+        cpf = seller_form.cleaned_data['cpf']
+        email = seller_form.cleaned_data['email']
+        telefone = seller_form.cleaned_data['telefone']
+        endereco = seller_form.cleaned_data['endereco']
+        senha = seller_form.cleaned_data['senha']
+
+        new_seller = Vendedor(
+            nome=nome,
+            cpf=cpf,
+            email=email,
+            telefone=telefone,
+            endereco=endereco,
+            senha=senha,
+            )
+
+        new_seller.save()
+    else:
+        print(seller_form.errors)
+
+    return redirect('add_new_seller')
 
 # def bought_item(request, item_id):
 #     my_item = Produto.objects.get(pk=item_id)

@@ -20,9 +20,23 @@ class Product_Form(forms.Form):
     #         'placeholder': 'Insira um produto'
     #     }
     #  ))
-    nome_produto = forms.CharField(max_length=100)
-    marca_produto = forms.CharField(max_length=100)
-    categoria_produto = forms.CharField(max_length=100)
+    nome_produto = forms.CharField(max_length=100,
+       widget=forms.TextInput(
+        attrs={
+            'placeholder': 'ex.: Aspirador de Pó'
+        })
+    )
+    marca_produto = forms.CharField(max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'ex.: LG'
+        }))
+    categoria_produto = forms.CharField(max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'ex.: Eletronico'
+            })
+    )
     preco_produto = forms.FloatField()
     quantidade_produto = forms.IntegerField()
     # imagem_produto = forms.FileField()

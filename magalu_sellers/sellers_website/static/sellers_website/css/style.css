@@ -120,7 +120,7 @@ ACCESS SECTION
     display: block;
     margin-bottom: .5rem;
 }
-.form__list input {
+.form__list input, .form__list select {
     display: block;
     border-radius: 50px;
     border: none;
