@@ -1,16 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
-# from django.views.generic.base import View
-# from .forms import List_Form
-# from .models import Shopping_List
-# from django.http import HttpResponse
+
 from .forms import Vendedor_Form, Product_Form
 from .models import Vendedor, Produto
 
 # Create your views here.
 
 def index(request):
-    # my_item = Produto.objects.order_by('id')
     return render(request, 'sellers_website/index.html')
 
 def sellers_home(request):
@@ -19,7 +15,6 @@ def sellers_home(request):
 def sellers_register(request):
     seller_form = Vendedor_Form()
     context = {
-        # 'my_item': my_item,
         'seller_form': seller_form
     }
     return render(request, 'sellers_website/sellers_register.html', context)
@@ -48,33 +43,12 @@ def product_visualization(request, product_id):
         'my_product' : my_product
     }
     return render(request, 'sellers_website/product_visualization.html', context)
-# class RegisterUserView(View):
-
-#     template_name = 'sellers_website/sellers_register.html'
-
-#     def get(self, request):
-#         return render (request, self.template_name)
-    
-#     def post(self, request):
-#         return render(request, self.template_name)
-
-
-# @require_POST
-# def add_new_item(request):
-#     form = List_Form(request.POST)
-
-#     if form.is_valid():
-#         text = form.cleaned_data.get('text')
-#         my_new_item = Shopping_List(item=text)
-#         my_new_item.save()
 
 @require_POST
 def add_new_product(request):
     product_form = Product_Form(request.POST)
 
-
     if product_form.is_valid():
-        # print(product_form.cleaned_data['quantidade_produto'])
         nome_produto = product_form.cleaned_data['nome_produto']
         marca_produto =  product_form.cleaned_data['marca_produto']
         categoria_produto =  product_form.cleaned_data['categoria_produto']
@@ -106,7 +80,6 @@ def add_new_seller(request):
 
 
     if seller_form.is_valid():
-        # print(product_form.cleaned_data['quantidade_produto'])
         nome = seller_form.cleaned_data['nome']
         cpf = seller_form.cleaned_data['cpf']
         email = seller_form.cleaned_data['email']

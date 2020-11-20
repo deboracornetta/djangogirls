@@ -3,11 +3,31 @@ from sellers_website.models import Vendedor, Produto
 
 
 class Vendedor_Form(forms.Form):
-    nome = forms.CharField(max_length=200)
-    cpf = forms.CharField(max_length=14)
-    email = forms.EmailField()
-    telefone = forms.CharField(max_length=11)
-    endereco = forms.CharField(max_length=200)
+    nome = forms.CharField(max_length=200,
+       widget=forms.TextInput(
+        attrs={
+            'placeholder': 'ex.: João Silveira'
+        }), label='Nome Completo')
+    cpf = forms.CharField(max_length=14,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'ex.: 40963502585'
+        }))
+    email = forms.EmailField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'ex.: jao@silveira.com'
+        }))
+    telefone = forms.CharField(max_length=11,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'ex.: 11965898887'
+        }))
+    endereco = forms.CharField(max_length=200,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'ex.: São Paulo, Brasil'
+        }), label='Estado' )
     senha = forms.CharField(max_length=12)
     class Meta:
         model = Vendedor

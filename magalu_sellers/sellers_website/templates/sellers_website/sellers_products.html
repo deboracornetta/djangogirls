@@ -9,9 +9,8 @@
                     <p>{{i.nome_produto}}</p>
                     <p>{{i.marca_produto}}</p>
                     <p>{{i.categoria_produto}}</p>
-                    <p>{{i.preco_produto}}</p>
-                    <p>{{i.quantidade_produto}}</p>
-                    <p>{{i.id}}</p>
+                    <p>R${{i.preco_produto}}</p>
+                    <p>{{i.quantidade_produto}} unidades</p>
                     <a href="/sellers/product/{{i.id}}" class="button button__submit">Ver Produto</a>
                 </li>
                 {% endfor %}
