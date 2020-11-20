@@ -1,0 +1,29 @@
+{% extends "sellers_website/base.html" %}
+    {% block content %}
+    <main class="main__products">
+        <h1 class="page__title">Lista de Produtos</h1>
+        <a class="button" href="/sellers/product/register">Cadastrar novo Produto</a>
+        <section class="access ">
+            <ul class="product-list">
+                {% for i in my_products %} 
+                    {% if i.ativo_produto %}
+                    <li class="product-card">
+                        <p>{{i.nome_produto}}</p>
+                        <p>{{i.marca_produto}}</p>
+                        <p>{{i.categoria_produto}}</p>
+                        <p>R${{i.preco_produto}}</p>
+                        <p>{{i.quantidade_produto}} unidades</p>
+                        <p>Código {{i.codigo_produto}}</p>
+                        <p>{{i.vendedor}}</p>
+                        <a href="/sellers/product/{{i.id}}" class="button button__submit">Ver Produto</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </section>
+    </main>    
+    <footer class="footer">
+        <p class="footer__help">Em caso de dúvidas, acesse a nossa central de atendimento.</p>
+    </footer>
+    {% endblock content %}

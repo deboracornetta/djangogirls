@@ -2,42 +2,56 @@
     {% block content %}
     <main>
         <h1 class="page__title">Quero ser um vendedor</h1>
-        <form class="form-signin" role="form" action="" method="post">
-            <h2 class="form-signin-heading">Faça o seu Cadastro</h2>
-    
-            <input id="id_email" name= "email" type="text" 
-                class="form-control" placeholder="Email*" 
-                required>
-    
-            <input id="id_cpf" name= "cpf" type="number" 
-                class="form-control" placeholder="CPF*" 
-                pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" 
-                title="Digite o CPF no formato: xxx.xxx.xxx-xx" 
-                required>
-    
-            <input id="id_name" name= "name" type="text"
-                class="form-control" placeholder="Nome Completo*"
-                required>
-    
-            <input id="id_password" name= "password" type="password"
-                class="form-control" placeholder="Senha*"
-                required>
-    
-            <input class='form-control' type='checkbox' name='checkbox[]' 
-                value='1' onclick='deRequire("form-control")' 
-                required> Li e aceito a Política de privacidade do grupo
-                Magazine Luiza
-    
-            <button class="btn btn-lg btn-primary btn-block" 
-                type="submit"> Limpar
-            </button>
-    
-            <button class="btn btn-lg btn-primary btn-block" 
-                type="submit"> Próximo
-            </button>
-            <p>Em caso de dúvidas, acesse a nossa central de atendimento.</p>
+        <form action="{% url 'add_new_seller' %}" method="POST" class="form-signin form__list">
+            {% csrf_token %}
+            {{ seller_form.as_ul }}
+            <div class="button__block">
+                <button class="button button__reset" 
+                    type="reset"> Limpar
+                </button>
+                <button class="button button__submit" 
+                    type="submit"> Cadastrar
+                </button>
+            </div>
         </form>
+        <!-- <form class="form-signin" role="form" action="" method="post">
+            <h2 class="form-signin-heading">Faça o seu Cadastro</h2>
+            <ul class="form__list">
+                <li>
+                    <label for="id_email">Email *</label>
+                     <input id="id_email" name="seller_form" type="text" class="form-control" placeholder="ex.:magalu@magazineluiza.com" required>
+                </li>
+                <li>
+                    <label for="id_cpf">CPF *</label>
+                    <input id="id_cpf" name="seller_form" type="number" class="form-control" placeholder="ex.: xxx xxx xxx xx" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" title="Digite o CPF no formato: xxx.xxx.xxx-xx" required>
+                </li>
+                <li>
+                    <label for="id_name">Nome Completo *</label>
+                    <input id="id_name" name="seller_form" type="text"class="form-control" placeholder="ex.: Luiza Magazine" required>
+                </li>
+                <li>
+                    <label for="id_password">Senha *</label>
+                    <input id="id_password" name="seller_form" type="password" class="form-control" placeholder="Mínimo 6 caracteres" required>
+                </li>
+                <li class="form__checkbox">
+                    <input class='form-control' type='checkbox' name='seller_form' value='1' required> 
+                     <label for="">Li e aceito a Política de privacidade do grupo Magazine Luiza</label>
+                </li>
+            </ul>
+            <div class="button__block">
+                <button class="button button__reset" 
+                    type="reset"> Limpar
+                </button>
+                <button class="button button__submit" 
+                    type="submit"> Próximo
+                </button>
+            </div>
 
+        </form> -->
+        <a href="/" class="button">Voltar</a>
     </main>
+    <footer class="footer">
+        <p class="footer__help">Em caso de dúvidas, acesse a nossa central de atendimento.</p>
+    </footer>
         
     {% endblock content %}

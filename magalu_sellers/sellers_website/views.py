@@ -1,63 +1,102 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
-from django.views.generic.base import View
-# from .forms import List_Form
-# from .models import Shopping_List
+
+from .forms import Vendedor_Form, Product_Form, Product_Update
+from .models import Vendedor, Produto
 
 # Create your views here.
 
 def index(request):
-    # my_item = Shopping_List.objects.order_by('id')
-    # form = List_Form()
-    # context = {
-    #     'my_item' : my_item,
-    #     'form' : form
-    # }
     return render(request, 'sellers_website/index.html')
 
 def sellers_home(request):
     return render(request, 'sellers_website/sellers_home.html')
 
 def sellers_register(request):
-    return render(request, 'sellers_website/sellers_register.html')
+    seller_form = Vendedor_Form()
+    context = {
+        'seller_form': seller_form
+    }
+    return render(request, 'sellers_website/sellers_register.html', context)
 
-# class RegisterUserView(View):
+def sellers_sucess(request):
+    return render(request, 'sellers_website/sellers_sucess.html')
 
-#     template_name = 'sellers_website/sellers_register.html'
+def sellers_products(request):
+    my_products = Produto.objects.order_by('id')
+    context = {
+        'my_products' : my_products
+    }
+    return render(request, 'sellers_website/sellers_products.html', context)
 
-#     def get(self, request):
-#         return render (request, self.template_name)
-    
-#     def post(self, request):
-#         return render(request, self.template_name)
+def product_register(request):
+    product_form = Product_Form()
+    context = {
+        'product_form': product_form
+    }
+    return render(request, 'sellers_website/product_register.html', context)
+
+def product_success(request):
+    return render(request, 'sellers_website/product_success.html')
 
 
-# @require_POST
-# def add_new_item(request):
-#     form = List_Form(request.POST)
+def product_visualization(request, product_id):
+    my_product = Produto.objects.get(pk=product_id)
+    product_form = Product_Update(request.POST or None, instance=my_product)
 
-#     if form.is_valid():
-#         text = form.cleaned_data.get('text')
-#         my_new_item = Shopping_List(item=text)
-#         my_new_item.save()
+    context = {
+        'product_form' : product_form,
+        'my_product' : my_product
+    }
+    return render(request, 'sellers_website/product_visualization.html', context)
 
-#     return redirect('shopping_list-index')
+@require_POST
+def add_new_product(request):
+    product_form = Product_Form(request.POST)
 
+    if product_form.is_valid():
+        
+        product_form.save()
+    else:
+        print(product_form.errors)
+
+    return redirect('sellers_website-product_register_success')
+
+def update_product(request, id):
+    instance = Produto.objects.get(pk=id)
+    product_form = Product_Update(request.POST or None, instance=instance)
+
+    if product_form.is_valid():
+        product_form.save()
+    else:
+        print(product_form.errors)
+
+    return redirect('sellers_website-product_register_success')
+
+@require_POST
+def add_new_seller(request):
+    seller_form = Vendedor_Form(request.POST)
+
+    if seller_form.is_valid():
+        seller_form.save()
+    else:
+        print(seller_form.errors)
+
+    return redirect('sellers_website-register_sucess')
 
 # def bought_item(request, item_id):
-#     my_item = Shopping_List.objects.get(pk=item_id)
+#     my_item = Produto.objects.get(pk=item_id)
 #     my_item.complete = True
 #     my_item.save()
 
-#     return redirect('shopping_list-index')
-
+#     return redirect('sellers_website-index')
 
 # def delete_item(request):
-#     Shopping_List.objects.filter(complete__exact=True).delete()
+#     Produto.objects.filter(complete__exact=True).delete()
 
-#     return redirect('shopping_list-index')
+#     return redirect('sellers_website-index')
 
 # def delete_all(request):
-#     Shopping_List.objects.all().delete()
+#     Produto.objects.all().delete()
     
-#     return redirect('shopping_list-index')
+#     return redirect('sellers_website-index')
