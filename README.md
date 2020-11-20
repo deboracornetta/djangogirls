@@ -1,5 +1,5 @@
 # Equipe DjanGirls
-![](https://uploads-ssl.webflow.com/5eb5565d728d3b50e8cbdfc5/5f6e3c3e9f32c521d875cb82_Luizacode%20Logo.png)
+![](https://ibcdn.canaltech.com.br/N_ogKwPCpdYxTObGD2S2GoJ--oM=/512x288/smart/i8950.jpeg)
 
 
 ## Desafio Luiza Code 
