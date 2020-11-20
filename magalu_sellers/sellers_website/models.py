@@ -21,6 +21,9 @@ class Produto(models.Model):
     quantidade_produto = models.FloatField()
     imagem_produto = models.FileField()
     vendedor = models.ForeignKey(Vendedor, null=True, on_delete=models.SET_NULL)
+    #define se o produto pode ser comprado
+    #quando False o produto esta disponivel, quando true ele nao esta
+    complete = models.BooleanField(default=False) 
 
     def __str__(self):
         return self.nome_produto
