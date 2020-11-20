@@ -2,7 +2,7 @@ from django import forms
 from sellers_website.models import Vendedor, Produto
 
 
-class Vendedor_Form(forms.Form):
+class Vendedor_Form(forms.ModelForm):
     nome = forms.CharField(max_length=200,
        widget=forms.TextInput(
         attrs={
@@ -40,13 +40,7 @@ class Product_Update(forms.ModelForm):
         fields = ('nome_produto','marca_produto', 'categoria_produto', 'preco_produto', 'quantidade_produto', 'vendedor', 'codigo_produto','ativo_produto')
 
 class Product_Form(forms.ModelForm):
-    # text = forms.CharField(max_length=100,
-    # widget=forms.TextInput(
-    #     attrs={
-    #         'class': 'form-control',
-    #         'placeholder': 'Insira um produto'
-    #     }
-    #  ))
+
     nome_produto = forms.CharField(max_length=100,
        widget=forms.TextInput(
         attrs={

@@ -75,7 +75,7 @@ def update_product(request, id):
 
 @require_POST
 def add_new_seller(request):
-    seller_form = Vendedor_Form(request.POST,None)
+    seller_form = Vendedor_Form(request.POST)
 
     if seller_form.is_valid():
         seller_form.save()
