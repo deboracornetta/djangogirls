@@ -1,0 +1,18 @@
+{% extends "sellers_website/base.html" %}
+    {% block content %}
+    <main>
+        <h1 class="page__title">Quero cadastrar um Produto</h1>
+
+        <form action="{% url 'add_new_product' %}" method="POST" class="form-signin form__list">
+            {% csrf_token %}
+            {{ product_form.as_ul }}
+            <button type="submit">OK</button>
+        </form>
+       
+        
+    </main>
+    <footer class="footer">
+        <p class="footer__help">Em caso de dúvidas, acesse a nossa central de atendimento.</p>
+    </footer>
+        
+    {% endblock content %}
