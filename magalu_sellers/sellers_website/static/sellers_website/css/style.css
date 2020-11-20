@@ -113,10 +113,19 @@ ACCESS SECTION
 .about__list {
     padding: 2rem;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.about__list li {
+    padding: 1rem;
+    width: 30%;
 }
 .about__text ol {
     padding: 2rem;
     text-align: left;
+    
 }
 .about__list img {
     width: 100px;
