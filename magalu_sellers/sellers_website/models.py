@@ -21,7 +21,6 @@ class Produto(models.Model):
     preco_produto = models.FloatField()
     quantidade_produto = models.IntegerField()
     codigo_produto = models.IntegerField(default='000000')
-    # imagem_produto = models.FileField()
     ativo_produto = models.BooleanField(default=True)
     vendedor = models.ForeignKey(Vendedor, null=True, on_delete=models.SET_NULL)
 

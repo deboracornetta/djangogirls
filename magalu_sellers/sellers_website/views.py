@@ -52,7 +52,7 @@ def product_visualization(request, product_id):
 
 @require_POST
 def add_new_product(request):
-    product_form = Product_Form(request.POST)
+    product_form = Product_Form(request.POST, request.FILES)
 
     if product_form.is_valid():
         

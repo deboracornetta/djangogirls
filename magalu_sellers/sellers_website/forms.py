@@ -61,7 +61,6 @@ class Product_Form(forms.ModelForm):
     preco_produto = forms.FloatField()
     quantidade_produto = forms.IntegerField()
     codigo_produto = forms.IntegerField()
-    # imagem_produto = forms.FileField()
     vendedor = forms.ModelChoiceField(queryset=Vendedor.objects.all())
     
     class Meta:
