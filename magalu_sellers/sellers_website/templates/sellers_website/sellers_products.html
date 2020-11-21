@@ -4,6 +4,7 @@
         <h1 class="page__title">Lista de Produtos</h1>
         <a class="button" href="/sellers/product/register">Cadastrar novo Produto</a>
         <section class="access ">
+            <h3 class="list__title">Produtos Ativos</h3>
             <ul class="product-list">
                 {% for i in my_products %} 
                 {% if i.ativo_produto %}
@@ -20,6 +21,7 @@
                 {% endif %}
                 {% endfor %}
             </ul>
+            <h3 class="list__title">Produtos Inativos</h3>
             <ul class="product-list">
                 {% for i in my_products %} 
                 {% if i.ativo_produto == False %}

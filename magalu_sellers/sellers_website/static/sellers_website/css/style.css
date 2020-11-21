@@ -144,7 +144,10 @@ ACCESS SECTION
 /* 
 PRODUCT LISTS HOME
 */
-
+.list__title {
+    color: black;
+    padding: 1.5rem;
+}
 .product-list {
     display: flex;
     flex-wrap: wrap;
