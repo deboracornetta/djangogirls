@@ -10,10 +10,35 @@ body, button {
 .header {
     height: 80px;
     background-color: #0D83C9;
-    display: flex;
+    display: flex;flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
+.header nav {
+    width: 100%;
+    color:white;
+    display: flex;
+    justify-content: center;
+}
+
+.header a {
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header a:hover {
+    color: #F19702;
+    
+
+
+}
+.header li {
+    display: inline;
+    margin:0% 20px;
+    
+}
+
 .header__logo {
     display: block;
     
