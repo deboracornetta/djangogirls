@@ -20,7 +20,7 @@ class Produto(models.Model):
     categoria_produto = models.CharField(max_length=100)
     preco_produto = models.FloatField()
     quantidade_produto = models.IntegerField()
-    # imagem_produto = models.FileField()
+    codigo_produto = models.IntegerField(default='000000')
     ativo_produto = models.BooleanField(default=True)
     vendedor = models.ForeignKey(Vendedor, null=True, on_delete=models.SET_NULL)
 
