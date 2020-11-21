@@ -1,20 +1,36 @@
 # Equipe DjanGirls
-
-## Projeto final Magalu  
-#### Desenvolvido em Python/Django. 
-
-Rodar o server
-
- -> python manage.py runserver
-
-Criar/Restabelecer Migrations
-
- -> python manage.py makemigrations
- -> python manage.py migrate
+![](https://ibcdn.canaltech.com.br/N_ogKwPCpdYxTObGD2S2GoJ--oM=/512x288/smart/i8950.jpeg)
 
 
-Páginas com conteúdo:
+## Desafio Luiza Code 
+O Magazine está com um projeto de expansão, onde deseja conectar vendedores que infelizmente devido a pandemia não conseguem vender seus produtos da forma como antes e oferecer uma diversidade maior de produtos para nossos clientes. Isso traria um impacto enorme para toda a cadeia:
 
- -> http://localhost:8000/
- -> http://localhost:8000/sellers
- -> http://localhost:8000/sellers/register
+1. Os vendedores conseguiriam melhorar seu faturamento a ter a continuidade de seu negócio utilizando nossa plataforma para realizar a venda de seus produtos;
+2. Os clientes ficariam felizes com a diversidade de produtos oferecidos;
+3. O Magazine Luiza melhorará muito seu faturamento conectando vendedores e clientes dos mais diversos nichos 
+
+
+## Pré-requisitos
+Este projeto foi desenvolvido em Python 3 e Django 3 
+
+
+## Guia de Uso 
+### Rodar o server
+
+- ```python manage.py runserver```
+
+### Criar/Restabelecer Migrations
+
+- ```python manage.py makemigrations```
+- ```python manage.py migrate```
+
+### Página principal
+
+- http://localhost:8000/
+
+## Autoras 
+- [Ana Sanz](https://github.com/Ahisanz)
+- [Julia Pocciotti](https://github.com/juliapocciotti)
+- [Júlia Valadares](https://github.com/juliaavaladares)
+- [Raquel Paiva](https://github.com/raquelpaiva)
+- [Sigrid Rodrigues](https://github.com/sigrid-fr)
